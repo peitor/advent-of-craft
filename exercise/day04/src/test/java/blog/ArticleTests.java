@@ -13,7 +13,9 @@ class ArticleTests {
                 "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
         );
 
-        article.addComment("Amazing article !!!", "Pablo Escobar");
+        article.addComment("TEXT ID:1", "Pablo Escobar");
+
+        assertThat(article.getComments().stream().map(Comment::text)).contains("TEXT ID:1");
     }
 
     @Test
